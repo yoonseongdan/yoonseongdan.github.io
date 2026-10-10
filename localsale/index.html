@@ -1,6 +1,32 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LocalSale has moved</title>
 <meta name="robots" content="noindex">
-<meta http-equiv="refresh" content="0; url=https://trendx-app.github.io/localsale/">
-<link rel="canonical" href="https://trendx-app.github.io/localsale/">
-<title>이동했습니다</title></head>
-<body><p>페이지가 이동했습니다: <a href="https://trendx-app.github.io/localsale/">https://trendx-app.github.io/localsale/</a></p></body></html>
+<link rel="canonical" href="https://trendx-company.vercel.app/localsale">
+<meta name="apple-itunes-app" content="app-id=6792212299">
+<noscript><meta http-equiv="refresh" content="0; url=https://trendx-company.vercel.app/localsale"></noscript>
+<style>body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#0b0d10;color:#f2f4f7;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:24px}a{color:#7cf0d4}</style>
+</head>
+<body>
+<p>LocalSale has moved to <a id="go" href="https://trendx-company.vercel.app/localsale">trendx-company.vercel.app/localsale</a></p>
+<script>
+(function () {
+  // 2026-10-10 회장: 앱이 쓰는 웹 주소를 공개 GitHub 저장소에서 회사 사이트 하위(https://trendx-company.vercel.app/localsale)로 옮겼다.
+  // 이 페이지는 이미 퍼진 옛 링크(…/localsale/?sale=<id>)와 옛 버전 앱이 만든 링크를 새 주소로 넘기는 일만 한다 — 지우지 말 것.
+  var NEW = 'https://trendx-company.vercel.app/localsale';
+  var sale = new URLSearchParams(location.search).get('sale');
+  var dest = sale ? NEW + '/sale/' + encodeURIComponent(sale) : NEW;
+  document.getElementById('go').href = dest;
+  // Android: 앱이 있으면 그 세일을 앱으로, 없으면 새 웹 세일 페이지로(크롬이 처리 — 타이머 없음).
+  if (sale && /Android/i.test(navigator.userAgent || '')) {
+    location.replace('intent://sale/' + encodeURIComponent(sale) + '#Intent;scheme=localsale;package=com.localsale.app;S.browser_fallback_url=' + encodeURIComponent(dest) + ';end');
+    return;
+  }
+  location.replace(dest); // iOS·데스크톱: 웹 세일 페이지(앱 열기 버튼·스마트 배너가 있다)
+})();
+</script>
+</body>
+</html>
